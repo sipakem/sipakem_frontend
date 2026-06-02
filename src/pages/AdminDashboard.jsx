@@ -235,6 +235,7 @@ export default function AdminDashboard() {
               )}
             </div>
           </div>
+        </div>
 
         {/* LINE CHART */}
         <div className="bg-white rounded-3xl p-8 shadow-sm border">
