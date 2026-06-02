@@ -121,8 +121,8 @@ export default function AdminDashboard() {
         {/* CHART */}
         <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* PIE */}
-          <div className="bg-white rounded-3xl p-8 shadow-sm border">
-            <div className="flex items-center gap-3 mb-8">
+          <div className="bg-white rounded-3xl p-5 md:p-8 shadow-sm border">
+            <div className="flex items-center gap-3 mb-6 md:mb-8">
               <div
                 className="w-9 h-9 rounded-full flex items-center justify-center"
                 style={{
@@ -132,22 +132,22 @@ export default function AdminDashboard() {
               >
                 <FiPieChart size={18} />
               </div>
-
-              <h2 className="text-xl font-bold" style={{ color: "#5e3e76" }}>
+          
+              <h2 className="text-lg md:text-xl font-bold" style={{ color: "#5e3e76" }}>
                 Diagnosis Paling Banyak
               </h2>
             </div>
-
-            <div className="flex items-center gap-10">
+          
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
               {/* PIE CHART */}
-              <div className="w-[220px] h-[220px]">
+              <div className="w-[180px] h-[180px] md:w-[220px] md:h-[220px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
                       data={dashboard.diagnosis_chart}
                       dataKey="value"
-                      innerRadius={55}
-                      outerRadius={85}
+                      innerRadius={40}
+                      outerRadius={65}
                       paddingAngle={2}
                     >
                       {dashboard.diagnosis_chart.map((entry, index) => (
@@ -157,14 +157,14 @@ export default function AdminDashboard() {
                         />
                       ))}
                     </Pie>
-
+          
                     <Tooltip />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
-
+          
               {/* LEGEND */}
-              <div className="flex-1 space-y-4">
+              <div className="flex-1 w-full space-y-3 md:space-y-4">
                 {dashboard.diagnosis_chart.map((item, index) => (
                   <div
                     key={index}
@@ -172,16 +172,18 @@ export default function AdminDashboard() {
                   >
                     <div className="flex items-center gap-3">
                       <div
-                        className="w-4 h-4 rounded-full"
+                        className="w-3 h-3 md:w-4 md:h-4 rounded-full"
                         style={{
                           backgroundColor: COLORS[index % COLORS.length],
                         }}
                       ></div>
-
-                      <p className="text-sm text-gray-700">{item.name}</p>
+          
+                      <p className="text-xs md:text-sm text-gray-700">
+                        {item.name}
+                      </p>
                     </div>
-
-                    <p className="text-sm font-semibold text-gray-700">
+          
+                    <p className="text-xs md:text-sm font-semibold text-gray-700">
                       {item.value}
                     </p>
                   </div>
@@ -191,8 +193,8 @@ export default function AdminDashboard() {
           </div>
 
           {/* AKTIVITAS ADMIN */}
-          <div className="bg-white rounded-3xl p-8 shadow-sm border">
-            <div className="flex items-center gap-3 mb-8">
+          <div className="bg-white rounded-3xl p-5 md:p-8 shadow-sm border">
+            <div className="flex items-center gap-3 mb-6 md:mb-8">
               <div
                 className="w-9 h-9 rounded-full flex items-center justify-center"
                 style={{
@@ -202,38 +204,37 @@ export default function AdminDashboard() {
               >
                 <FiActivity size={18} />
               </div>
-
-              <h2 className="text-xl font-bold" style={{ color: "#5e3e76" }}>
+          
+              <h2 className="text-lg md:text-xl font-bold" style={{ color: "#5e3e76" }}>
                 Aktivitas Admin
               </h2>
             </div>
-
-            <div className="space-y-5">
+          
+            <div className="space-y-3 md:space-y-5">
               {dashboard.aktivitas && dashboard.aktivitas.length > 0 ? (
                 dashboard.aktivitas.slice(0, 5).map((item, index) => (
                   <div
                     key={index}
-                    className="border-b border-gray-100 pb-4 last:border-none"
+                    className="border-b border-gray-100 pb-3 md:pb-4 last:border-none"
                   >
-                    <div className="flex items-center justify-between gap-4">
-                      <p className="font-semibold text-gray-800">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1 md:gap-4">
+                      <p className="font-semibold text-sm md:text-base text-gray-800">
                         {item.aktivitas}
                       </p>
-
-                      <p className="text-sm text-gray-400 whitespace-nowrap">
+          
+                      <p className="text-xs md:text-sm text-gray-400">
                         {item.waktu}
                       </p>
                     </div>
                   </div>
                 ))
               ) : (
-                <div className="text-center py-10 text-gray-500">
+                <div className="text-center py-8 text-sm text-gray-500">
                   Belum ada aktivitas admin
                 </div>
               )}
             </div>
           </div>
-        </div>
 
         {/* LINE CHART */}
         <div className="bg-white rounded-3xl p-8 shadow-sm border">
