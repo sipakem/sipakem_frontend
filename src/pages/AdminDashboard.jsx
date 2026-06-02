@@ -138,7 +138,7 @@ export default function AdminDashboard() {
               </h2>
             </div>
           
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:gap-10">
               {/* PIE CHART */}
               <div className="w-[180px] h-[180px] md:w-[220px] md:h-[220px]">
                 <ResponsiveContainer width="100%" height="100%">
@@ -164,7 +164,7 @@ export default function AdminDashboard() {
               </div>
           
               {/* LEGEND */}
-              <div className="flex-1 w-full space-y-3 md:space-y-4">
+              <div className="w-full md:flex-1 space-y-3">
                 {dashboard.diagnosis_chart.map((item, index) => (
                   <div
                     key={index}
