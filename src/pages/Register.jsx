@@ -59,14 +59,6 @@ function Register() {
               alt="SIPAKEM"
               className="w-40 mb-4"
             />
-      
-            <h1 className="text-2xl font-bold text-[#5e3e76]">
-              SIPAKEM
-            </h1>
-      
-            <p className="text-sm text-gray-500 mt-1 text-center">
-              Sistem Pakar Kesehatan Mental
-            </p>
           </div>
       
           <form onSubmit={handleSubmit}>
