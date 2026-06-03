@@ -18,7 +18,7 @@ export default function TentangKami({ onBack }) {
     "Intan Arini Siansah Putri",
     "Talita Audrey Maritza Distany",
     "Elfa Fristcilla",
-    "Muhammad Alfi Rizki",
+    "M Alfy Rizki",
     "Danang Syahrul Hidayat",
   ];
 
