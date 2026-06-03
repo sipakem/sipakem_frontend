@@ -40,7 +40,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "https://sipakembackend-production.up.railway.app/login",
+        "http://localhost:5000/login",
         form
       );
 
@@ -54,33 +54,36 @@ function Login() {
         navigate("/beranda");
       }
     } catch (error) {
-      setErrorMessage(error.response?.data?.message || "Terjadi kesalahan");
+      setErrorMessage(
+        error.response?.data?.message || "Terjadi kesalahan"
+      );
     }
   };
 
   return (
-    <div className="min-h-screen md:flex bg-[#f3eef7]">
-      {/* Left Panel hanya desktop */}
+    <div className="min-h-screen md:flex bg-gradient-to-br from-pink-100 to-blue-100 md:bg-[#f5f5f5]">
+      {/* Desktop Only */}
       <div className="hidden md:block">
         <LeftPanel />
       </div>
 
-      {/* Form Login */}
-      <div className="w-full md:w-[58%] bg-white rounded-none md:rounded-l-[30px] shadow-[-5px_0_20px_rgba(0,0,0,0.1)] flex justify-center items-center px-6 md:px-8 py-10">
-        <div className="w-full max-w-[420px]">
+      {/* Form Area */}
+      <div className="w-full md:w-[58%] bg-transparent md:bg-white rounded-none md:rounded-l-[30px] shadow-none md:shadow-[-5px_0_20px_rgba(0,0,0,0.1)] flex justify-center items-center px-5 md:px-8 py-10">
+        <div className="w-full max-w-[420px] bg-white md:bg-transparent rounded-3xl shadow-xl md:shadow-none p-8 md:p-0">
+
           {/* Logo Mobile */}
           <div className="md:hidden flex flex-col items-center mb-8">
             <img
               src={logo}
               alt="SIPAKEM"
-              className="w-40 mb-4"
+              className="w-36 mb-4"
             />
 
-            <h1 className="text-2xl font-bold text-[#5e3e76]">
+            <h2 className="text-2xl font-bold text-[#5e3e76]">
               SIPAKEM
-            </h1>
+            </h2>
 
-            <p className="text-sm text-gray-500 mt-1 text-center">
+            <p className="text-sm text-gray-500 text-center mt-1">
               Sistem Pakar Kesehatan Mental
             </p>
           </div>
@@ -102,7 +105,9 @@ function Login() {
                 </div>
               )}
 
-              <label className="block text-sm mb-1">Email</label>
+              <label className="block text-sm mb-1">
+                Email
+              </label>
 
               <input
                 type="email"
@@ -115,7 +120,9 @@ function Login() {
 
             {/* PASSWORD */}
             <div className="mb-8">
-              <label className="block text-sm mb-1">Password</label>
+              <label className="block text-sm mb-1">
+                Password
+              </label>
 
               <div className="relative">
                 <input
@@ -127,10 +134,16 @@ function Login() {
                 />
 
                 <div
-                  onClick={() => setShowPassword(!showPassword)}
+                  onClick={() =>
+                    setShowPassword(!showPassword)
+                  }
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer hover:text-[#5e3e76]"
                 >
-                  {showPassword ? <FaEye /> : <FaEyeSlash />}
+                  {showPassword ? (
+                    <FaEye />
+                  ) : (
+                    <FaEyeSlash />
+                  )}
                 </div>
               </div>
             </div>
@@ -138,7 +151,7 @@ function Login() {
             {/* BUTTON */}
             <button
               type="submit"
-              className="w-full bg-[#5e3e76] hover:bg-[#4c315f] text-white py-3 rounded-xl transition duration-300 font-medium"
+              className="w-full bg-[#5e3e76] hover:bg-[#4c315f] text-white py-3 rounded-lg transition duration-300"
             >
               Masuk
             </button>
