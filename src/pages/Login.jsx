@@ -67,7 +67,7 @@ function Login() {
             {/* Logo Mobile */}
             <div className="md:hidden flex flex-col items-center mb-8">
               <img
-                src="/logo"
+                src="{logo}"
                 alt="SIPAKEM"
                 className="w-24 h-24 mb-3"
               />
