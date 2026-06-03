@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import LeftPanel from "../components/LeftPanel";
+import logo from "../assets/logo_sipakem.png";
 
 function Login() {
   const navigate = useNavigate();
@@ -71,18 +72,10 @@ function Login() {
           {/* Logo/Judul Mobile */}
           <div className="md:hidden text-center mb-8">
             <img
-              src="/logo.png"
+              src={logo}
               alt="SIPAKEM"
-              className="w-20 h-20 mx-auto mb-3 object-contain"
+              className="w-50 mb-10"
             />
-
-            <h2 className="text-2xl font-bold text-[#5e3e76]">
-              SIPAKEM
-            </h2>
-
-            <p className="text-gray-500 text-sm mt-2">
-              Sistem Informasi Pengaduan Kekerasan Perempuan dan Anak
-            </p>
           </div>
 
           <h1 className="text-2xl md:text-3xl font-bold text-[#5e3e76] mb-3">
