@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEyeSlash, FaEye, FaChevronDown } from "react-icons/fa";
+import { FaEyeSlash, FaEye, FaChevronDown, FaCalendarAlt } from "react-icons/fa";
 import LeftPanel from "../components/LeftPanel";
 import logo from "../assets/logo_sipakem.png"; 
 
@@ -86,13 +86,16 @@ function Register() {
             {/* TANGGAL */}
             <div className="mb-4">
               <label className="block text-sm mb-1 font-medium text-gray-700">Tanggal Lahir</label>
-              <input
-                type="date"
-                name="tanggal_lahir"
-                onChange={handleChange}
-                required
-                className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-[#5e3e76] focus:ring-1 focus:ring-[#5e3e76]"
-              />
+              <div className="relative">
+                <input
+                  type="date"
+                  name="tanggal_lahir"
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 pr-12 outline-none focus:border-[#5e3e76] focus:ring-1 focus:ring-[#5e3e76] text-gray-700 appearance-none custom-date-input"
+                />
+                <FaCalendarAlt className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+              </div>
             </div>
 
             {/* GENDER */}
