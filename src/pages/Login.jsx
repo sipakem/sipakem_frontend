@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import LeftPanel from "../components/LeftPanel";
 import { useEffect } from "react";
+import logo from "../assets/logo_sipakem.png";
 
 function Login() {
   const navigate = useNavigate();
@@ -66,7 +67,7 @@ function Login() {
             {/* Logo Mobile */}
             <div className="md:hidden flex flex-col items-center mb-8">
               <img
-                src="/logo.png"
+                src="/logo"
                 alt="SIPAKEM"
                 className="w-24 h-24 mb-3"
               />
