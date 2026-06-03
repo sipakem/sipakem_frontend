@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 
 function LeftPanel() {
   return (
-    <div className="w-full md:w-[42%] min-h-screen bg-gradient-to-br from-pink-100 to-blue-100 p-8">
+    <div className="hidden md:block w-full md:w-[42%] min-h-screen bg-gradient-to-br from-pink-100 to-blue-100 p-8">
       <img src={logo} alt="logo" className="w-50 mb-10" />
 
       <div className="text-center">
