@@ -55,14 +55,11 @@ function Login() {
   };
 
   return (
-  <div className="flex flex-col md:flex-row min-h-screen bg-[#f5f5f5]">
-    {/* LEFTPANEL TERSEMBUNYI DI MOBILE */}
-    <div className="hidden md:block md:w-[42%] w-full">
-      <LeftPanel />
-    </div>
-    
-    <div className="w-full md:w-[58%] bg-white rounded-none md:rounded-l-[30px] shadow-[-5px_0_20px_rgba(0,0,0,0.1)] flex justify-center items-center px-8 py-10">
-      <form onSubmit={handleSubmit} className="w-full max-w-[420px] mt-6">
+    <div className="flex flex-col md:flex-row min-h-screen bg-[#f5f5f5]">
+      <LeftPanel />
+
+      <div className="w-full md:w-[58%] bg-white rounded-none md:rounded-l-[30px] shadow-[-5px_0_20px_rgba(0,0,0,0.1)] flex justify-center items-center px-8 py-10">
+        <form onSubmit={handleSubmit} className="w-full max-w-[420px] mt-6">
           <h1 className="text-1xl md:text-3xl font-bold text-[#5e3e76] mb-3">
             Masuk
           </h1>
