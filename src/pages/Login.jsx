@@ -57,7 +57,7 @@ function Login() {
   return (
   <div className="flex flex-col md:flex-row min-h-screen bg-[#f5f5f5]">
     {/* LEFTPANEL TERSEMBUNYI DI MOBILE */}
-    <div className="hidden md:block w-full md:w-[42%]">
+    <div className="hidden md:block md:w-[42%] w-full">
       <LeftPanel />
     </div>
     
