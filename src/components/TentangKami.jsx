@@ -1,6 +1,5 @@
 import {
   FaInfoCircle,
-  FaUserCircle,
   FaCheckCircle,
   FaArrowLeft,
 } from "react-icons/fa";
@@ -12,14 +11,19 @@ import dokumentasi5 from "../assets/dokumentasi5.jpg";
 import dokumentasi6 from "../assets/dokumentasi6.jpg";
 import icon6 from "../assets/icon6.png";
 import psikologImg from "../assets/psikolog.jpeg";
+import intanImg from "../assets/intan.jpeg";
+import tataImg from "../assets/tata.jpeg";
+import elfaImg from "../assets/elfa.jpeg";
+import alfyImg from "../assets/alfy.jpeg";
+import danangImg from "../assets/danang.jpeg";
 
 export default function TentangKami({ onBack }) {
   const teams = [
-    "Intan Arini Siansah Putri",
-    "Talita Audrey Maritza Distany",
-    "Elfa Fristcilla",
-    "M Alfy Rizki",
-    "Danang Syahrul Hidayat",
+    { nama: "Intan Arini Siansah Putri", foto: intanImg },
+    { nama: "Talita Audrey Maritza Distany", foto: tataImg },
+    { nama: "Elfa Fristcilla", foto: elfaImg },
+    { nama: "M Alfy Rizki", foto: alfyImg },
+    { nama: "Danang Syahrul Hidayat", foto: danangImg },
   ];
 
   const galleries = [
@@ -114,17 +118,7 @@ export default function TentangKami({ onBack }) {
             <img
               src={psikologImg}
               alt="Psikolog"
-              className="
-          w-40
-          h-40
-          md:w-44
-          md:h-44
-          rounded-full
-          object-cover
-          border-4
-          border-white
-          shadow-md
-        "
+              className="w-40 h-40 md:w-44 md:h-44 rounded-full object-cover border-4 border-white shadow-md"
             />
 
             {/* INFO */}
@@ -150,16 +144,22 @@ export default function TentangKami({ onBack }) {
         </h3>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-          {teams.map((team, index) => (
+          {teams.map((member, index) => (
             <div
               key={index}
-              className="border rounded-2xl p-5 text-center hover:shadow-md transition"
+              className="border rounded-2xl p-5 text-center hover:shadow-md bg-white transition flex flex-col items-center"
             >
-              <div className="w-20 h-20 rounded-full bg-[#f3ebf8] mx-auto mb-4 flex items-center justify-center">
-                <FaUserCircle size={40} className="text-[#5e3e76]" />
+              <div className="w-24 h-24 rounded-full bg-[#f3ebf8] mb-4 overflow-hidden border-2 border-[#5e3e76]/20 shadow-inner flex items-center justify-center">
+                <img 
+                  src={member.foto} 
+                  alt={member.nama} 
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
 
-              <h4 className="font-semibold text-gray-700">{team}</h4>
+              <h4 className="font-semibold text-gray-700 text-sm leading-snug">
+                {member.nama}
+              </h4>
             </div>
           ))}
         </div>
@@ -180,15 +180,7 @@ export default function TentangKami({ onBack }) {
               <img
                 src={image}
                 alt="Gallery"
-                className="
-          w-full
-          h-auto
-          sm:h-64
-          lg:h-72
-          object-contain
-          lg:object-cover
-          object-center
-        "
+                className="w-full h-auto sm:h-64 lg:h-72 object-contain lg:object-cover object-center"
               />
             </div>
           ))}
