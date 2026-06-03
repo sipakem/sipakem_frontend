@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaCalendarAlt } from "react-icons/fa";
 import { FiX, FiCheckCircle } from "react-icons/fi";
 
 export default function ProfileInfo({ userData, setUserData }) {
@@ -126,17 +126,21 @@ export default function ProfileInfo({ userData, setUserData }) {
           />
         </div>
 
+        {/* TANGGAL*/}
         <div>
           <label className="block mb-2 text-sm font-medium">
             Tanggal Lahir
           </label>
-          <input
-            type="date"
-            name="tanggal_lahir"
-            value={form.tanggal_lahir}
-            onChange={handleChange}
-            className="w-full border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-[#5e3e76]"
-          />
+          <div className="relative">
+            <input
+              type="date"
+              name="tanggal_lahir"
+              value={form.tanggal_lahir}
+              onChange={handleChange}
+              className="w-full border rounded-xl px-5 py-4 pr-14 outline-none focus:ring-2 focus:ring-[#5e3e76] bg-white text-gray-700 custom-date-input"
+            />
+            <FaCalendarAlt className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-base" />
+          </div>
         </div>
 
         <div>
