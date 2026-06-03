@@ -69,7 +69,7 @@ function Login() {
               <img
                 src={logo}
                 alt="SIPAKEM"
-                className="w-24 h-24 mb-3"
+                className="w-50 mb-10"
               />
           
               <h1 className="text-2xl font-bold text-[#5e3e76]">
