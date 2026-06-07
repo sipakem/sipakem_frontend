@@ -51,7 +51,6 @@ function Login() {
   };
 
   return (
-    // Mengubah background utama di mobile menjadi gradasi, dan f5f5f5 di desktop
     <div className="flex flex-col md:flex-row min-h-screen bg-gradient-to-br from-pink-100 to-blue-100 md:bg-[#f5f5f5]">
       <LeftPanel />
       <div className="w-full md:w-[58%] bg-transparent md:bg-white rounded-none md:rounded-l-[30px] md:shadow-[-5px_0_20px_rgba(0,0,0,0.1)] flex flex-col justify-center items-center px-6 py-10 md:px-8">
