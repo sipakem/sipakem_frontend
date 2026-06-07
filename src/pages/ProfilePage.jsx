@@ -75,7 +75,7 @@ export default function ProfilePage() {
       }
     } catch (error) {
       console.error("Gagal mengunggah foto profil:", error);
-      alert(error.response?.data?.message || "Terjadi galat pada server saat mengunggah.");
+      alert(error.response?.data?.message || "Terjadi kesalahan pada server saat mengunggah.");
     }
   };
 
