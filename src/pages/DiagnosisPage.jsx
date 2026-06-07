@@ -251,7 +251,7 @@ export default function DiagnosisPage() {
           <div className="relative bg-white rounded-2xl shadow-xl p-8 w-[380px] text-center">
             {/* CLOSE BUTTON */}
             <button
-              onClick={() => setDeletePopup({ show: false, id: null })}
+              onClick={() => setSuccessPopup(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-red-500 transition"
             >
               <FiX size={22} />
